@@ -3,28 +3,26 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+It's not what we make, it's what we make possible.
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+## Focus
 
-There are currently two themes built on Poole:
+* Application programming in LabVIEW
+* Interaction and visual design
+* Circuit design and debugging with VirtualBench
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+## Elsewhere
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+* [Twitter](https://twitter.com/wireddown)
+* [GitHub](https://github.com/wireddown)
+* [Stack Overflow](http://stackoverflow.com/users/616838/joe-friedrichsen)
+* [Trello](https://trello.com/wireddown)
 
-## Setup
+## Colophon
 
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+* Generator: [Jekyll](http://jekyllrb.com/)
+* Theme: [Lanyon](https://github.com/poole/lanyon)
+* Tags: [Lanyon with tags](https://github.com/wireddown/wireddown.github.io/tree/feature_tags)
+* Comments: [ghpages-ghcomments](https://github.com/wireddown/ghpages-ghcomments)
+* Storage: [GitHub](https://github.com/wireddown/wireddown.github.io)
+* Domain Registrar: [gandi.net](http://www.gandi.net/)

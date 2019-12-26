@@ -1,8 +1,11 @@
+- slug: vikit
+  name: VIKit
+
+- slug: github-pages
+  name: GitHub Pages
+
 - slug: jekyll
   name: Jekyll
 
-- slug: documentation
-  name: Documentation
-
-- slug: examples
-  name: Examples
+- slug: liquid
+  name: Liquid
