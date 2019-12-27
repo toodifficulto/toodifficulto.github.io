@@ -5,19 +5,19 @@ permalink:           pretty
 exclude:             [CNAME, Gemfile, README.md, LICENSE.md, scratch.md]
 unpublished:         true
 show_drafts:         false
-title:               Down to the Wire
-tagline:             Elements of LabVIEW
-description:         'A blog by <a href="https://twitter.com/JoeFriedrichsen" target="_blank">@JoeFriedrichsen</a>.'
-url:                 http://downtothewire.io
+title:               Bae's Blog
+tagline:             Standing on the shoulders of giants
+description:         'A blog to memorize and note'
+url:                 https://toodifficulto.github.io/
 baseurl:             ''
 
 # About/contact
 author:
-  name:              Joe Friedrichsen
-  url:               https://twitter.com/JoeFriedrichsen
-  email:             all.wired.down@gmail.com
+  name:              Seung Hak Bae
+  url:               https://toodifficulto.github.io/
+  email:
 
 # Custom data
-established:         2014
-license:             CC BY 4.0
-license_url:         http://creativecommons.org/licenses/by/4.0/legalcode
+established:         
+license:
+license_url:

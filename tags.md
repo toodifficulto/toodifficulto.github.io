@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tags
+title: Contents
 ---
 
 <div class="page">
