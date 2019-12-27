@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Contents
+title: Notes
 ---
 
 <div class="page">
