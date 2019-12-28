@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linked List
+title: 연결리스트 (Linked List)
 tags:  [algorithm-and-data-structure]
 ---
 Queue나 stack, array와 마찬가지로 대표적인 자료구조이다. 하지만, 기존의 queue나 stack, array보다는 복잡하다. 구조 자체는 간단하나 구현할 때 헷갈리는 부분이 많다.
@@ -42,7 +42,7 @@ Queue나 stack, array와 마찬가지로 대표적인 자료구조이다. 하지
 ### 파이썬으로 연결 리스트 구현하기.
 Linked List는 파이썬에서 특별히 제공하지 않는다. 그래서 아래처럼 직접 구현하였다. Node class와 그 Node들을 이어서 linked list를 만드는 NodeMgmt(management) class가 있다. NodeMgmt에는 data값을 받으면 새로운 Node를 만들어 연결하는 add()함수와 연결되어 있는 모든 node를 출력하는 desc()함수, 주어진 data값과 똑같은 값을 가진 node를 삭제하는 delete()함수 마지막으로 주어진 data값과 똑같은 값을 가진 node를 반환하는 search()함수가 있다.
 
-~~~
+~~~python
 class Node:
 
     def __init__(self, data, next=None):
@@ -102,7 +102,7 @@ class NodeMgmt:
 ~~~
 이제, 만든 코드를 test해보자. linked_list_1에 0으로 시작 노드를 만든 다음 1부터 9까지의 데이터를 가진 각 node를 만든다. 그리고 모두 출력한다.
 
-~~~
+~~~python
 linked_list_1 = NodeMgmt(0)
 
 for data in range(1,10):
@@ -124,11 +124,11 @@ print(node_4.data)
 
 더블 링크드 리스트에서는 Node에 prev만 있는 것이 아니라 next도 있다. 그리고 NodeMgmt class에는 가장 처음 node를 가리키는 head와 가장 마지막 node를 가리키는 tail도 있다.
 
-양방향으로 연결되어 있어서 노드 탐색이 양쪽으로 모두 가능 예를 들어 만약 8000번째에 원하는 data가 있다면, 앞에서 8000번 찾는 것 보단 뒤에서 2000번 찾는 게 훨씬 빠르다. 
+양방향으로 연결되어 있어서 노드 탐색이 양쪽으로 모두 가능 예를 들어 만약 8000번째에 원하는 data가 있다면, 앞에서 8000번 찾는 것 보단 뒤에서 2000번 찾는 게 훨씬 빠르다.
 
 **파이썬 코드**
 
-~~~
+~~~python
 class Node:
 
     def __init__(self, data, prev=None, next=None):
