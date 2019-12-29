@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 해쉬 테이블 (Hash Table)
+title: 해쉬 테이블(Hash Table)
 tags:  [algorithm-and-data-structure]
 ---
 해쉬 테이블은 큐, 스택과 더블어 대표적인 자료구조 중 하나이다. 특히 요즘은 이 해쉬 테이블을 변형시켜 사용하는 데 대표적인 기술이 블록체인이다.
