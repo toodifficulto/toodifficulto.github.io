@@ -20,7 +20,7 @@ Queue나 stack, array와 마찬가지로 대표적인 자료구조이다. 하지
 
 **일반적인 링크드 리스트의 형태는 아래와 같다.**
 
-![Alt text](/public/linked_list.png)
+![Alt text](/public/post/2019_12_27_linked_list/linked_list.png)
 
 &nbsp;
 &nbsp;
@@ -120,7 +120,7 @@ print(node_4.data)
 **더블 링크드 리스트(Doubly Linked List)**
 * 이중 연결 리스트라고도 한다. Node에 다음 node를 가리키는 next만 있는 것이 아니라 전의 node를 가리키는 prev도 있다.
 
-![Alt text](/public/doubly_linked_list.png)
+![Alt text](/public/post/2019_12_27_linked_list/doubly_linked_list.png)
 
 더블 링크드 리스트에서는 Node에 prev만 있는 것이 아니라 next도 있다. 그리고 NodeMgmt class에는 가장 처음 node를 가리키는 head와 가장 마지막 node를 가리키는 tail도 있다.
 

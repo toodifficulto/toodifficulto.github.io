@@ -63,7 +63,7 @@ tags:  [algorithm-and-data-structure]
 
 표현식에 가장 큰 영향을 미치는 n의 단위로 표기를 한다.
 
-![Alt text](/public/time_complexity.png)
+![Alt text](/public/post/2019_12_28_time_complexity/time_complexity.png)
 
 
 &nbsp;

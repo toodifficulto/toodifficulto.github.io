@@ -10,7 +10,7 @@ tags:  [algorithm-and-data-structure]
 
 ## Hash Table 구조
 
-![Alt text](/public/hash_table.png)
+![Alt text](/public/post/2019_12_29_hash_table/hash_table.png)
 **해쉬(Hash)** 는 임의이 값을 고정길이로 변환하는 것이다. 그래서 우리는 **key값** 을 **산술연산을 이용해 데이터 위치를 찾는 해쉬 함수에** 넣는다. 해쉬 함수의 결과값으로 구한 해쉬 값 혹은 해쉬 주소는 해쉬 테이블의 해당 주소를 가리키고 이 주소의 슬롯에 데이터를 넣거나 가져올 수 있다.
 
 * **해쉬 (Hash)** : 임의의 값을 고정길이로 변환하는 것.
@@ -86,7 +86,7 @@ print(hash_table)
 * 개방해싱 또는 open hashing기법 중 하나 : 해쉬 테이블 저장공간 외의 공간을 활용하는 기법
 * **충돌이 일어나면 링크드 리스트의 자료구조를 사용해서 링크드 리스트로 데이터를 추가로 뒤에 연결시키는 방법.**
 
-![Alt text](/public/hash_table_collision_chaining.png)
+![Alt text](/public/post/2019_12_29_hash_table/hash_table_collision_chaining.png)
 
 밑의 파이썬에서는 linked_list를 사용하진 않고 대신 list를 사용하였다.
 
@@ -130,7 +130,7 @@ def read_data(data):
 * **충돌이 일어나면, 해당 Hash address의 다음 address부터 맨 처음 나오는 빈공간에 저장하는 기법**
 * 저장공간 활용도를 높이기 위한 기법
 
-![Alt text](/public/hash_table_collision_closed.png)
+![Alt text](/public/post/2019_12_29_hash_table/hash_table_collision_closed.png)
 
 ##### python 프로그래밍
 ~~~python
