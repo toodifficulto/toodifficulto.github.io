@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [기본 정렬 알고리즘]버블 정렬 (Bubble Sort)
+title: 버블 정렬 (Bubble Sort) [기본 정렬 알고리즘]
 tags:  [algorithm-and-data-structure]
 ---
 

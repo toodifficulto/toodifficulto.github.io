@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 삽입 정렬 (Insertion Sort) [기본 정렬 알고리즘]
+title: [기본 정렬 알고리즘]삽입 정렬 (Insertion Sort)
 tags:  [algorithm-and-data-structure]
 ---
 

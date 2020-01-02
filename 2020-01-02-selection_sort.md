@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 선택 정렬 (Selection Sort) [기본 정렬 알고리즘]
+title: [기본 정렬 알고리즘]선택 정렬 (Selection Sort)
 tags:  [algorithm-and-data-structure]
 ---
 

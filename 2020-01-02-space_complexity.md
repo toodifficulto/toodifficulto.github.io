@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 공간 복잡도 (Space Complexity) [참고]
+title: [참고]공간 복잡도 (Space Complexity)
 tags:  [algorithm-and-data-structure]
 ---
 
