@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 퀵 정렬 (Quick Sort)
+title: 퀵 정렬 (Quick Sort) [고급정렬]
 tags:  [algorithm-and-data-structure]
 ---
 
