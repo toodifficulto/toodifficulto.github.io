@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 부의 역사
+title: 부의 역사 [경제]
 tags:  [review]
 ---
 
