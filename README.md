@@ -1,6 +1,6 @@
 # Down to the Wire
 
-This repository represents and hosts my blog: [downtothewire.io](http://downtothewire.io).
+This repository represents and hosts my blog: [downtothewire.io](http://downtothewire.io)
 
 # License
 
