@@ -1,7 +1,7 @@
 # Down to the Wire
 
 This repository represents and hosts my blog: [downtothewire.io](http://downtothewire.io)
-# License
+# Licens
 
 The following directories and their contents are Copyright Joe Friedrichsen and licensed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/legalcode).
 
