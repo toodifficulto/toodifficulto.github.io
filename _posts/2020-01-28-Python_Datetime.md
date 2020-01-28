@@ -109,6 +109,7 @@ strftime() 메소드를 사용하면 datetime 객체를 문자열로 변경할 �
 ### Dateutil 모듈
 Dateutil에서 relativeDelta를 사용해서 날짜간 차이등을 구할 수 있다.
 
+~~~python
 from dateutil.relativedelta import relativedelta
 from datetime import datetime, date
 
@@ -118,7 +119,6 @@ print(now)
 # 현재 기준에서 한 달 뒤를 알려준다.
 print(now + relativedelta(months = +1))
 
-~~~python
 from dateutil.relativedelta import relativedelta
 from datetime import datetime, date
 
