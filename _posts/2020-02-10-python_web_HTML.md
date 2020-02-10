@@ -1,57 +1,81 @@
 ---
 layout: post
-title: HTML
+title: CSS
 tags:  [python-web-development]
 ---
 
-# HTML (HyperText Mark-up Language)
-반복문, 조건문 등 연산이 가능한 프로그래밍 언어(e.g Python)와는 다르다. 웹페이지에서 **콘텐츠의 구조** 를 표현하기 위해 고안된 텍스트 포맷이다. 컨텐츠의 서로 다른 부분들을 **태그(tag)** 를 씌우거나 감싸서, 다른 형식으로 보이게 하거나 특정한 방식으로 동작하도록 한다.
+# CSS
+CSS는 시각적으로 꾸며주는 역할을 한다. CSS는 구체적으로 어떤 스타일로 요소가 표시 되는 지를 정하는 규격이라고 할 수 있다.
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-### HTML 배우기
-HTML은 여는 태그와 닫는 태그로 되어 있다. 컨텐트 영역은 실제 화면에 표시되는 영역이다. 여는 태그와 닫는 태그 사이에 있다. 태그를 포함한 영역을 **요소(ELEMENT)** 라고 한다.
+# 사용법
 
-속성(attribute)은 요소의 성질을 정의하는 명세이고 이미지 파일 경로, 대체 텍스트와 같이 추가 정보를 제공한다.
+[참고 사이트](https://ofcourse.kr/css-course/CSS-%EC%9E%85%EB%AC%B8)
 
-&nbsp;
-&nbsp;
-&nbsp;
+CSS 내부적으로 사용되는 문법은 동일하며, 어디에 기술하느냐의 차이가 존재한다.
+기술하는 방법은 아래의 3가지가 있다.
 
-# HTML 기본 구조
-### head요소
-- title
-- meta
-- link
-등이 있고 css가 어디에 있는지 등을 알려준다. 이런 요소들은 실제 보여지진 않는다.
-
-### Body
-body는 실제 우리에게 보여지는 영역이다.
+### 1. HTML 태그의 style 속성을 이용
+~~~html
+<!-- 1번 방법 -->
+<div style="color: red"> this is red text </div>
+~~~
 
 &nbsp;
+
+
+### 2. <style> 태그를 통해 HTML 문서 내부에 기술 (<style> 태그는 주로 <head>태그 내부에 사용합니다)
+
+~~~HTML
+<!-- 2번 방법 -->
+<html>
+<head>
+	<style type="text/css">
+		.my-text{ color: blue }
+	</style>
+</head>
+<body>
+	<div class="my-text">
+		this is red blue
+	</div>
+</body>
+</html>
+~~~
+
 &nbsp;
-&nbsp;
 
-# HTML의 역할과 책임 : 구조
-HTML의 역할과 책임은 콘텐츠의 구조를 나타낸다. 웹 브라우저는 HTML 태그를 그대로 보여주지 않고, 태그의 구조와 특성을 파악해 그래픽으로 보여준다. (PARSING)
+### 3. .css 파일로 분리하여 HTML 문서에 연결
+CSS를 별도의 파일로 저장 후 HTML 문서 내에서 불러 올 수도 있다.
 
-### HTML의 역사
-HTML이 처음 생겼을 때는 처음 생겼을 때는 폰트, 문자 색상, 이미지 출력 기능 등을 지원하지 않았다. 초기 HTML은 문서 구조를 형성하는 역할을 담당하였다.
+~~~HTML
+@charset "utf-8";
 
-90년대 중반 이후 넷스케이프, 익스플로러 등 다양한 브라우저가 탕생하였다.
+아래는 모든 h1을 바꾸는 방식이다.
+h1{
+	font-size: 30px;
+	font-weight: normal;
+	margin: 0;
+	margin-bottom: 10px;
+}
 
-그리고 부족한 기능을 채우고자 브라우저 제조사마다 고유한 HTML을 고안하였는데
+아래는 progress-bar라는 id를 가지고 있는 속성만 바꾸는 방식이다. id는 고유한 값으로 오직 하나의 element만 가질 수 있다.
+#progress-bar{
+	margin: 0;
+	padding: 0;
+	margin-bottom: 15px;
+	list-style: none;
+}
 
-- 문제 1. 최초의 치지인 '콘텐츠의 의미를 부여하고 문서 구조를 형성하는 역할'과 점점 멀여졌고
-
-- 문제 2. 호환성 문제
-
-등이 생겼다.
-
-이를 해결하고자 **W3C(World Wide Web Consortium)** 에서 웹 표준을 정립하였다.
-
-브라우저 제조사들도 웹 표준에 맞추어 브라우저를 제작하기 시작하였고
-
-현재 가장 많이 사용하는 것은 **HTML5** 이다.
+아래는 common-btn이라는 class를 가진 element들에게만 적용되는 방식이다.
+.common-btn{
+	padding: 4px 6px;
+	background-color: #07C;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	text-decoration: none;
+}
+~~~
