@@ -19,3 +19,36 @@ tags:  [fintech]
 ROOT 계정 비밀번호는 반드시 기억해야 한다.
 
 그리고 이후 실습과정에서 Server와 연동 편의성을 위해 Legacy 방식의 데이터베이스 인증을 사용한다.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# NodeJS 설치하기
+Node.js는 Chrome V8 Javascript 엔진으로 빌드된 Javascript 런타임이다.
+
+즉, **자바스크립트로 서버를 개발할 수 있도록 해준다.**
+
+NodeJS에 대한 자세한 설명은 아래 사이트 참조.
+
+[Node.js란 무엇인가?](https://asfirstalways.tistory.com/43)
+
+Node.JS는 아래 사이트에서 설치하면 된다.
+
+[Node.JS 설치 사이트](https://nodejs.org/ko/download/)
+
+설치하고 나서, node를 쳐본다. 그러면 아래와 같이 뜨면 성공적으로 설치가 된 것이다.
+
+![Alt text](/public/post/2020_02_05_fintech_1/pic2.PNG)
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Visual Studio Code 설치
+Microsoft에서 만든 텍스트 편집기이다.. VSCode라고 줄여서 말하기도 한다. "현대적인 웹 및 클라우드 응용 프로그램을 빌드 및 디버깅하기 위해 재정의되고 최적화된 코드 편집이다.
+
+아래 사이트에서 다운로드
+
+[VS 다운로드 사이트](https://code.visualstudio.com/)
