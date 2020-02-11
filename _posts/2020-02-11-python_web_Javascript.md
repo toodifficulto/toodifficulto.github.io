@@ -18,3 +18,24 @@ tags:  [python-web-development]
 
 
 **즉, 자바스크립트가 생김으로써 서버에 닿지 않아도 상호작용을 할 수 있고, 브라우저에서 정보를 좀 더 복잡하게 표시할 수 도 있게 되었다.**
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Web Programming할때 자주 쓰이는 사이트 모음
+
+[codepen](https://codepen.io/)
+
+
+[devdocs](https://devdocs.io/)
+
+
+[caniuse](https://caniuse.com/)
+내가 쓰는 기술이 많이 쓰이는 지 보여주는 사이트
+
+### 검색엔진 Query URL 설정하기
+
+아래 사이트 참고
+
+[https://juicyjusung.github.io/2019/02/08/%EC%9C%A0%EC%9A%A9%ED%95%9C%EA%B2%83%EB%93%A4/%ED%81%AC%EB%A1%AC%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84%ED%99%9C%EC%9A%A9%ED%8C%81/](https://juicyjusung.github.io/2019/02/08/%EC%9C%A0%EC%9A%A9%ED%95%9C%EA%B2%83%EB%93%A4/%ED%81%AC%EB%A1%AC%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84%ED%99%9C%EC%9A%A9%ED%8C%81/)
