@@ -30,7 +30,7 @@ tags:  [python-web-development]
 # Visual Studio Code에서 Python 사용하기
 python을 설치하고 나서 Visual Studio Code를 켜보자. 그리고 옆에 Extension이 있는데 여기서 python을 검색해서 가장 상위에 있는 python extension을 선택해서 download하자.
 
-![Alt text](/public/post/2020_02_06_python_web_django/pic_2.png)
+![Alt text](/public/post/2020_02_06_python_web_django/pic_2.PNG)
 
 
 &nbsp;
@@ -46,7 +46,7 @@ python의 패키지들을 쉽게 다운로드 할 수 있게 해주는 것이 pi
 
 그러면 아래 Visual studio Code terminal에서 pip3를 했을 때 잘 되는 것을 볼 수 있다.
 
-![Alt text](/public/post/2020_02_06_python_web_django/pic_1.png)
+![Alt text](/public/post/2020_02_06_python_web_django/pic_1.PNG)
 
 
 &nbsp;
@@ -63,7 +63,7 @@ pip3 install virtualenv
 
 그런다음 fcdjango_venv라는 가상환경을 만든다. 그러면 옆에 fcdjango_venv라는 새로운 파일이 만들어 진것을 볼 수 있다.
 
-![Alt text](/public/post/2020_02_06_python_web_django/pic_3.png)
+![Alt text](/public/post/2020_02_06_python_web_django/pic_3.PNG)
 
 그런 다음 fdcjango_venv를 activate해주어야 한다. 그러나 내 컴퓨터에서는 아래와 같은 에러가 떴다.
 
@@ -75,13 +75,13 @@ programming\fcdjango_venv\Scripts\activate.ps1 파일을 로드할 수 없습니
 
 그래서 찾아본 결과 powershell에서 executionPolicy를 unrestricted로 바꾸어야 한다는 것을 알았다. 그래서 powershell에서 아래와 같이 바꾸어주었다.
 
-![Alt text](/public/post/2020_02_06_python_web_django/pic_4.png)
+![Alt text](/public/post/2020_02_06_python_web_django/pic_4.PNG)
 
 [참고사이트](https://gosmcom.tistory.com/115)
 
 그리고 나서 다시 해보니 잘 되었다.
 
-![Alt text](/public/post/2020_02_06_python_web_django/pic_5.png)
+![Alt text](/public/post/2020_02_06_python_web_django/pic_5.PNG)
 
 그리고 나서 startproject를 해주고
 
