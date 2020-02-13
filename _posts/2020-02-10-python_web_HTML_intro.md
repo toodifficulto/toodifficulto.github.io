@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTML
+title: HTML 개요
 tags:  [python-web-development]
 ---
 
