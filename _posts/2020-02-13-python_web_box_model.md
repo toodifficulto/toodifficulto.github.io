@@ -88,4 +88,4 @@ margin은 요소 바깥 여백 경계인데 묘한 성질이 있다. 바로 요�
 ![Alt text](/public/post/2020_02_13_box_model/pic3.PNG)
 
 ### 요소의 크기
-한 요소의 크기는 어떻게 결정 될까?  앞서 width와 height 속성으로 콘텐트의 크기를 정할 수 있다고 하였다. 이렇게 콘텐트의 너비와 높이만으로 width와 height 값을 산정하는 것은 box-sizing 속성이 content-box 값일 때이다. 이게 브라우저 기본 설정이다. 그런데 이렇게 되면 레이아웃을 그릴 때 padding 값과 border 두께를 매번 계산하고 고려해야 한다는 문제가 있다. 그래서 padding과 border 두께까지 포함한 것을 요소의 width와 height로 적용하려면 box-sizing 속성을 border-box로 바꾸면 된다.
+한 요소의 크기는 어떻게 결정 될까?  앞서 width와 height 속성으로 콘텐트의 크기를 정할 수 있다고 하였다. 이렇게 콘텐트의 너비와 높이만으로 width와 height 값을 산정하는 것은 box-sizing 속성이 content-box 값일 때이다. 이게 브라우저 기본 설정이다. 그런데 이렇게 되면 레이아웃을 그릴 때 padding 값과 border 두께를 매번 계산하고 고려해야 한다는 문제가 있다. 그래서 padding과 border 두께까지 포함한 것을 요소의 width와 height로 적용하려면 box-sizing 속성을 border-box로 바꾸면 된다. 
