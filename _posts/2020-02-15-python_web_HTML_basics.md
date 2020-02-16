@@ -24,3 +24,60 @@ tags:  [python-web-development]
 </main>
 <footer class="footer">푸터</footer>
 ~~~
+
+# meta 요소
+html의 기본구조를 먼저 생성하면 아래와 같다.
+
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>The Web framework for perfectionists with deadlines | Django</title>
+  </head>
+  <body></body>
+</html>
+~~~
+
+# DOCTYPE 선언
+문서 최상단에는 문서 타입이 정의되어 있는데 이를 **DOCTYPE 선언** 이라고 부른다. DOCTYPE은 어떤 버전으로 작성되었는지 브라우저에게 알려주는 선언문 같은 것이다. 반드시 문서 내의 최상단에 위치해야 한다. 지금 보이는 DOCTYPE 선언은 HTML5 버전의 DOCTYPE이고 최근에 가장 많이 사용되고 있다. 다른 DOCTYPE을 발견하신다면 구 버전이라고 생각하시면 되겠다. DOCTYPE을 선언하지 않거나 잘못 선언한 경우, 브라우저가 문서를 잘못된 방식으로 해석할 수 있으니 조심해야 한다.
+
+&nbsp;
+
+# html 요소
+다음은 <html> 요소다. <html> 요소는 최상위 레벨의 요소로, **루트 요소** 라고도 부른다. HTML 요소에는 lang이라는 attribute가 들어갈 수 있는데 검색엔진이나 브라우저가 참고할 수 있도록 해당 문서가 어떤 언어로 작성되었는지 나타내주는 속성이다. 한국어로 작성된 사이트라면 ko로 수정하시면 된다.
+
+&nbsp;
+
+# head
+**<head>** 요소 안에 들어 있는 부분은 꽤나 내용이 많다. 브라우저 화면에 표시되지 않지만, 문서의 기본 설정이나 스타일시트/자바스크립트 파일을 연결하는 역할을 한다. 또, body를 해석하기 전 기본적으로 알아야 할 정보를 다룬다.
+
+&nbsp;
+
+## meta
+**<meta>** 태그는 문서의 일반적인 정보와 문자 인코딩을 명시한다. 빈요소이다.
+
+
+### <meta charset="UTF-8" />
+가장 먼저 나오는 **<meta charset="UTF-8" />** 는 문자 집합 및 문자 인코딩 관련 요소이다. 최근의 웹에서는 전 세계 문자를 표현하기 위한 표준으로 제정된 유니코드를 많이 사용하고 있다. UTF-8은 유니코드 중에서도 널리 사용되는 인코딩이다. 이 부분을 지정하지 않으면, 브라우저가 지원하는 언어가 다를 경우 깨질 가능성이 있다,
+
+### <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+**<meta name="viewport" content="width=device-width, initial-scale=1.0" />** 는 반응형 웹사이트를 만드는 경우에 선언되어야 하는 내용이다. 브라우저 크기를 조절해보면 브라우저 크기에 따라 요소 배치가 달라지는 것을 볼 수 있는데 이를 반응형 웹사이트라고 한다.
+
+
+### <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+마지막으로 **<meta http-equiv="X-UA-Compatible" content="ie=edge" />** 는 인터넷 익스플로러 브라우저에서의 렌더링 관련이 있는데 익스플로러의 호환성 보기 모드에서 최신 버전의 엔진을 사용하는 브라우저로 렌더링 하라는 의미이다.
+
+&nbsp;
+&nbsp;
+
+## title
+<title> 요소는 문서의 제목을 나타내주는데 중요한 텍스트를 입력해야 검색 엔진이 페이지를 잘 확인할 수가 있다. 같은 웹사이트라고 하더라도 페이지마다 핵심 키워드를 따로 제공해주는 것이 좋다.
+
+
+### link
+link라고 쓰고 탭 키를 누르면 자동완성 되는데 rel 속성은 relationship, 즉 관계의 약자로 지금 html 문서와는 어떤 관계인지를 써주면 된다. 우리는 CSS 파일을 연결할 것이므로 stylesheet라고 적으면 된다. href 속성은 파일의 위치를 적어주면 된다.
