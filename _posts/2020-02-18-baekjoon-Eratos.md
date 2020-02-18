@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 에라토스테네스의 체 구하기
-tags:  [algorithm-problem]
+tags:  [algorithm-and-data-structure]
 ---
 
 # 에라토스테네스의 체 구하기
