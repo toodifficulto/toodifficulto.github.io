@@ -23,7 +23,7 @@ tags:  [Python]
 
 * **class 자체를 매개변수 (cls) 로 받는다.**
 * **@clasmethod** 데코레이터를 사용한다.
-* **생성자 오버로딩** 에 사용된다. 잘 만들어진 웹이나 어플리케이션을 보면 instance Method 보다는 class Method로 **constructor** 를 만드는 것을 선호하는 경향이 있다. 
+* **생성자 오버로딩** 에 사용된다. 잘 만들어진 웹이나 어플리케이션을 보면 instance Method 보다는 class Method로 **constructor** 를 만드는 것을 선호하는 경향이 있다.
 
 Employee 클래스가 있다고 하자. 이 클래스에는 2개의 클래스 변수가 있다. (workplace와 salary_per) 클래스 메소드는 이런 클래스 변수를 바꾸기 위해 사용된다. **raise_per** 을 보면 인자로 cls를 받고 클래스 변수인 cls.salary_per을 바꿔준다.
 
