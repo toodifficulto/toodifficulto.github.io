@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 파이썬 심화 매직 메소드
+title: 파이썬 Magic Method Advanced
 tags:  [Python]
 ---
 
