@@ -165,3 +165,13 @@ Union-by-rank와 path compression 기법 사용 시 시간 복잡도는 다음 �
 
 **O(MlogN)**
 그러므로, N이 2^65536값을 가지더라도 logN은 5이므로 상수에 가깝다고 볼 수 있다.
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+# 5. 파이썬 코드
