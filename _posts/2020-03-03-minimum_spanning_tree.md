@@ -175,3 +175,64 @@ Union-by-rank와 path compression 기법 사용 시 시간 복잡도는 다음 �
 
 
 # 5. 파이썬 코드
+~~~python
+parent = dict()
+rank = dict()
+
+def find(node):
+    # path compression
+    if parent[node] != node:
+        parent[node] = find(parent[node])
+
+    return parent[node]
+
+def make_set(node):
+    parent[node] = node
+    rank[node] = 0
+
+# union-by-rank 기법
+def union(node_v, node_u):
+    root1 = find(node_v)
+    root2 = find(node_u)
+
+    if rank[root1] > rank[root2]:
+        parent[root2] = root1
+    else:
+        parent[root1] = root2
+
+        if rank[root1] == rank[root2]:
+            rank[root2] += 1
+
+# 1.초기화
+def kruskal(graph):
+    mst = list()
+
+    for node in graph['vertices']:
+        make_set(node)
+
+    # 2. 간선 weight기반 sorting
+    edges = graph['edges']
+    edges.sort()
+
+    # 3. 간선 연결(사이클 없는)
+    for edge in edges:
+        weight, node_v, node_u = edge
+        if find(node_v) != find(node_u):
+            union(node_v, node_u)
+            mst.append(edge)
+
+    return mst
+~~~
+
+~~~python
+kruskal(mygraph)
+~~~
+
+~~~
+[(5, 'A', 'D'),
+ (5, 'C', 'E'),
+ (6, 'D', 'F'),
+ (7, 'A', 'B'),
+ (7, 'B', 'E'),
+ (9, 'E', 'G')]
+~~~
