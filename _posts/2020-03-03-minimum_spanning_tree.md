@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Minimum Spanning Tree
+title: Minimum Spanning Tree (1) Kruskal's Algorithm
 tags:  [algorithm-and-data-structure]
 ---
 # 1. 신장 트리란?
