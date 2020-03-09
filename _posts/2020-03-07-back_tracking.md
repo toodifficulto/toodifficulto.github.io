@@ -3,7 +3,6 @@ layout: post
 title: Back Tracking 기법
 tags:  [algorithm-and-data-structure]
 ---
-
 # 백 트래킹(backtracking)이란?
 
 **백 트래킹 문제 (backtracking)** 또는 **퇴각 문제(backtrack)** 이라고 부른다. **제약 조건 만족 문제(Constraint Satisfaction Problem)** 에서 해를 찾기 위한 전략이다.
