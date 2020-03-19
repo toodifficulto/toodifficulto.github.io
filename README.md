@@ -1,6 +1,4 @@
-# Down to the Wire
-
-This website 
+Website created by Seung Hak Bae.
 
 This repository represents and hosts my blog: [downtothewire.io](http://downtothewire.io)
 # Licens
