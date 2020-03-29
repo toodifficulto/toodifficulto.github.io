@@ -78,7 +78,7 @@ print("parse : {}".format(urlparse('http://www.encar.co.kr?test=test').query))
 
 ~~~
 
-이제 ipify에 요청을 해보자. 그리고 **urllib.parse.urlencode** 함수를 통해 GET방식으로 encode해준다. 
+이제 ipify에 요청을 해보자. 그리고 **urllib.parse.urlencode** 함수를 통해 GET방식으로 encode해준다.
 
 ~~~python
 # 기본 요청2(ipify)
