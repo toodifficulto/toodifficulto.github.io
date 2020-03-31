@@ -1,5 +1,5 @@
 ---
 layout: post
-title: 다음 주식 크롤링
+title: Requests 실습 (1)
 tags:  [crawling]
 ---
