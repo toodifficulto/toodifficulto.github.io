@@ -5,4 +5,4 @@ tags:  [crawling]
 ---
 
 # REST API란?
-rest
+rest API는 
