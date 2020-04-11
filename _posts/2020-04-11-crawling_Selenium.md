@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Selenium 활용하기
+title: Selenium 활용하기 (1)
 tags: [crawling]
 ---
 # Selenium이란
