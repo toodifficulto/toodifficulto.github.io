@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 파이썬의 클래스
+title: Python Class
 tags:  [python]
 ---
 
