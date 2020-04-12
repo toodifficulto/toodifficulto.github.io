@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python MagicMethod
-tags: [Python]
+tags: [python]
 ---
 
 # Magic Method란?

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python Sequence형
-tags: [Python]
+tags: [python]
 ---
 # 시퀀스형
 파이썬의 중요한 핵심 프레임워크 -> __시퀀스(Sequence),__ __반복(Iterator),__ __함수(Functions),__ __클래스(Class)__ 이 있다. 그 중 **시퀀스형** 에 대해 공부해보자.
