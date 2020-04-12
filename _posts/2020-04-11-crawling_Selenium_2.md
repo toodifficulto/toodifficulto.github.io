@@ -76,7 +76,7 @@ browser.get("http://prod.danawa.com/list/?cate=112758&15main_11_02")
 
 이때 Explicitly_Wait을 사용해보자.
 
-아래 코드를 사용해서 찾으려는 대상을 driver가 명시적으로 '2초'와 '3초'를 기다리도록 만들 수 있다. 
+아래 코드를 사용해서 찾으려는 대상을 driver가 명시적으로 '2초'와 '3초'를 기다리도록 만들 수 있다.
 ~~~python
 WebDriverWait(browser, 3).until(EC.presence_of_element_located((By.XPATH, '//*[@id="dlMaker_simple"]/dd/div[2]/button[1]'))).click()
 WebDriverWait(browser, 2).until(EC.presence_of_element_located((By.XPATH, '//*[@id="selectMaker_simple_priceCompare_A"]/li[13]/label'
