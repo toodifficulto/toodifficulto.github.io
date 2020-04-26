@@ -1,270 +1,211 @@
 ---
 layout: post
-title: Python generator
+title: Python Coroutine
 tags: [python]
 ---
 
-# Generator란
-generator란 간단하게 설명해서 iterator를 생성해주는 function이다. iterator는 next()메소드를 이용해 데이터에 순차적으로 접근이 가능한 object 이다. 제너레이터는 배열이나 리스트를 리턴하는 함수와 비슷하며 호출을 할 수 있는 파라미터를 가지고 있으며 연속적인 값들을 만드렁 낸다.
+# 루틴(Routine)이란?
+컴퓨터 프로그램에서 어떤 일을 담당하는 하나의 정리된 일이다. 프로그램은 크고 작은 여러가지 루틴을 조합시킴으로써 성립된다. **루틴은 메인루틴(main routine)과 서브루틴(subroutine)으로 구분하고 있다.** 메인 루틴이란 프로그램의 주요한 부분이며, 전체의 개략적인 동작 절차를 표시하도록 만들어진다. 즉, 메인 루틴에서는 몇 가지 서브루틴을 호출하고, 서브루틴에 의해서 프로그램의 세세한 실행을 행한다.
 
-**하지만, 한번에 모든 값을 포함한 배열을 만들어서 리턴하는 대신에 (list는 이 경우에 속한다.) yield 구문을 이용해 한 번 호출할 때 마다 하나의 값만을 리턴하고 이런 이유로 일반 반복자에 비해 아주 작은 메모리를 필요로 한다.**
+&nbsp;
+&nbsp;
+&nbsp;
 
-또한 일반 함수가 호출되면 코드의 첫 번째행 부터 시작하여 리턴(return) 구문이나 예외(exception) 또는 (리턴을 하지 않는 함수이면) 마지막 구문을 만날때까지 실행된 후, 호출자(caller)에게 모든 콘트롤을 리턴한다. 그리고 함수가 가지고 있던 모든 내부 함수나 모든 로컬 변수는 메모리상에서 사라진다.
+# 코루틴
+코루틴도 서브루틴처럼 기능들을 별도의 공간에 모아 놓고 있다는 점에서 유사하다. 하지만, 서브루틴의 경우에는 메인루틴에서 특정 서브루틴의 공간으로 이동한 후에 리턴에 의해 호출자로 돌아와 다시 프로세스를 진행하는데 반해 **코루틴의 경우에는 루틴을 진행하는 중간에 멈추어서 특정 위치로 돌아갔다가 다시 운래 위치로 돌아와 나머지 루틴을 수행할 수 있다.** 또 다른 차이점은 서브루틴은 진입점과 반환점이 단 하나밖에 없어 메인루틴에 종속적이지만, 코루틴은 **진입지점이 여러개이기 때문에 메인루틴에 종속적이지 않아 대등하게 데이터를 주고 받을 수 있다는 특징이 있다.**
 
-그러나 한번에 일을 다하고 영원히 사라져버리는 함수가 아닌 하나의 일을 마치면 했던 일을 기억하면서 대기하고 있다가 다시 호출되면 전의 일을 계속 이어져 하는 함수가 필요해졌다. 그것이 바로 **제너레이터** 이다. 제너레이터를 사용하면 일반 함수보다 훨씬 좋은 퍼포먼스를 낼 수가 있고, 메모리 리소스도 절약할 수 있다.
+**파이썬에서 코루틴의 특징과 흐름.**
 
-즉 요약하면 아래와 같다.
-1. 지능형 리스트, 딕셔너리, 집합 -> 데이터 셋이 증가 될 경우 메모리 사용량 증가 -> 제너레이터 완화
+>
+파이썬에는 yield 문이라는 특수한 구문이 있다. return 처럼 동작하지만, 사실은 입력으로 동작한다.(메인루틴에 종속적이 아니라 대등한 상태이기 때문에)
+next(coroutine)은 coroutine 함수의 첫번째 yield 까지 호출한다음 대기한다. 두번째 next(coroutine)을 호출하면, 첫번째 yield 다음의 나머지 부분을 수행하고 다시 돌아와 그 다음 yield 까지 호출한다. iteration 이 가능한곳까지 next 함수가 수행된 뒤에는 StopIteration 에러가 발생하게 된다.
+만약 yield 문이 특정 변수에 할당된다면, 만들어진 코루틴 객체에서 coroutine.send(value)를 호출해 주어야 한다. 첫번째 coroutine 지점(yield)에 멈춰있는 상태에서 변수에 할당 되어야 하는데 아무런 값도 들어오지 않는다면 에러가 발생하게 된다. 즉, yield 를 통해서 메인루틴과 서브루틴간에 서로 값이 이동하면서 특정 로직을 수행하게 되는 것이다.
 
-2. 단위 실행 가능한 코루틴(Coroutine) 구현에 아주 중요하다.
-
-3. 딕셔너리, 리스트 한 번 호출 할 때 마다 하나의 값만 리턴 -> 아주 작은 메모리 양을 필요로 한다.
-
-~~~python
-def square_numbers(nums):
-    result = []
-
-    for i in nums:
-        result.append(i * i)
-
-    return result
-
-my_nums = square_numbers([1,2,3,4,5])
-
-print(my_nums)
-~~~
-인자로 받은 리스트를 for 루프를 돌면서 i * i의 결과값으로 새로운 리스트를 만들고 리턴하는 함수이다.
-~~~
-[1, 4, 9, 16, 25]
-~~~
-
-이 코드를 제너레이터로 만들어 보자.
+아래에는 coroutine1()이라는 함수를 만들었다. c1의 type을 보면 generator이다. 그래서 next()함수를 실행해보니 yield문이 나오기 전까지가 실행된다.
 
 ~~~python
-def square_numbers(nums):
-    for i in nums:
-        yield i * i
+def coroutine1():
+    print(">>> coroutine started.")
+    i = yield
+    print(">>> coroutine received : {}".format(i))
 
-my_nums = square_numbers([1,2,3,4,5])
+c1 = coroutine1()
 
-print(my_nums)
+print(type(c1))
+
+next(c1)
 ~~~
 
-제너레이터라는 오브젝트가 반환되었다. **제너레이터는 리턴할 모든 값을 메모리에 저장하지 않기 때문에 조금 전 일반 함수의 결과와 같이 한번에 리스트로 보이지 않는다.** 제너레이터는 한 번 호출될때마다 **하나의 값만을 전달(yield)한다.**
+~~~
+<class 'generator'>
+>>> coroutine started.
+~~~
 
-~~~
-<generator object square_numbers at 0x0395A728>
-~~~
-iterator인 generator는 next함수를 통해 다음값을 볼 수 있다.
+send()를 통해 yield문에 값을 준다. 그러면 받은 i값을 print()를 통해 출력하고 다음 yield값이 없으므로 StopIteration이 발생한다.
+
 ~~~python
-print(next(my_nums))
-print(next(my_nums))
-print(next(my_nums))
-print(next(my_nums))
-print(next(my_nums))
-print(next(my_nums))
+def coroutine1():
+    print(">>> coroutine started.")
+    i = yield
+    print(">>> coroutine received : {}".format(i))
+
+c1 = coroutine1()
+
+print(type(c1))
+
+next(c1)
+
+c1.send(100)
 ~~~
-next()함수를 통해 잘 반환하다가 모든 숫자가 다 반환된 후 next()함수가 또 호출되면 StopIteration 에러가 난다.
+
 ~~~
-1
-4
-9
-16
-25
+>>> coroutine started.
+>>> coroutine received : 100
 Traceback (most recent call last):
-  File "c:/Users/ASUS/Programming/Python/Python_Language/Advanced_Grammar/Chapter_06_01_2_practice.py", line 32, in <module>
-    print(next(my_
+  File "c:/Users/ASUS/Programming/Python/Python_Language/Advanced_Grammar/Chatper06_02_2_practice.py", line 12, in <module>
+    c1.send(100)
+StopIteration
 ~~~
+&nbsp;
+&nbsp;
+&nbsp;
 
-for루프를 사용하면 StopIteration이 발생하지 않는다.
+# 제너레이터 상태
+제너레이터는 아래와 같은 상태가 있다.
+
+1. GEN_CREATED : 처음 대기 상태
+2. GEN_RUNNING : 실행 상태
+3. GEN_SUSPENDED : yield 대기 상태
+4. GEN_CLOSED : 실행 완료 상태
 
 ~~~python
-def square_numbers(nums):
-    for i in nums:
-        yield i * i
+def coroutine2(x):
+    print('>>> coroutine started : {}'.format(x))
+    y = yield x
+    print('>>> coroutine received : {}'.format(y))
+    z = yield x + y
+    print('>>> coroutine received : {}'.format(z))
 
-my_nums = square_numbers([1,2,3,4,5])
+c3 = coroutine2(10)
 
-print(my_nums)
+from inspect import getgeneratorstate
 
-for num in my_nums:
-    print(num)
+print(getgeneratorstate(c3))
+
+print(next(c3))
+
+print(getgeneratorstate(c3))
+
+print(c3.send(15))
 ~~~
+먼저 coroutine2의 object가 만들어진 상태는 GEN_CREATED상태이다. 그리고 난 후 next()함수가 호출되고 yield x까지 실행이 된다.
+그리고 난 후 다시 한번 상태를 보면 GEN_SUSPENDED이다. 그리고 나선 send()를 통해 값이 전달 되고 y값에 저장이 된다. 그리고 print()문이 실행 되고 yield x + y값이 실행된다.
+
 
 ~~~
-<generator object square_numbers at 0x01BEA728>
-1
-4
-9
-16
+GEN_CREATED
+>>> coroutine started : 10
+10
+GEN_SUSPENDED
+>>> coroutine received : 15
 25
 ~~~
 
-위의 함수는 list comprehension을 사용하면 더 쉽게 만들 수 있다.
-~~~Python
-my_nums = [x*x for x in [1,2,3,4,5]]
+# 데코레이터 패턴
+데코레이터와 코루틴을 함께 사용해보자.
 
-for num in my_nums:
-  print(num)
-~~~
-
-~~~
-1
-4
-9
-16
-25  
-~~~
-
-위 구문을 조금만 바꾸면 **제너레이터를 만들 수 있다.[]을 ()로 바꾸면 된다.**
-
+> **functools.wraps는** 보통 python fucntion을 wrapping할 때 원래 function의 정보들을 유지 시키기 위해서 사용된다.
 ~~~python
-my_nums = (x*x for x in [1,2,3,4,5])
+from functools import wraps
 
-print(type(my_nums))
+def coroutine(func):
 
-print(next(my_nums))
-print(next(my_nums))
-print(next(my_nums))
-print(next(my_nums))
+    @wraps(func)
+    def primer(*args, **kwargs):
+        gen = func()
+        next(gen)
+        return gen
+
+    return primer
+
+@coroutine
+def sumer():
+    total = 0
+    term = 0
+
+    while True:
+        term = yield total
+        total += term
+
+su = sumer()
+
+print(su.send(100))
+print(su.send(50))
 ~~~
 
+그러면 다음과 같은 결과값이 나온다.
 ~~~
-<class 'generator'>
-1
-4
-9
-16
-~~~
-
-**다른 예제**
-아래에는 generator_ex1()이라는 generator를 만들었다. 그리고 next()를 통해 보면 yield문까지 진행된 것을 볼 수 있다.
-~~~python
-def generator_ex1():
-    print('start')
-    yield 'AAA'
-    print('continue')
-    yield 'BBB'
-
-print(type(generator_ex1()))
-
-print(next(generator_ex1()))
-~~~
-
-~~~
-<class 'generator'>
-start
-AAA
+100
+150
+300
 ~~~
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-# 자주 사용하는 함수
-
-**itertools.count**
-itertools.count 함수는 1부터 2.5씩 값을 더해서 무한으로 반환시켜주는 generator를 만들어주는 함수이다.
+# yield from
+yield를 하긴 하는데 내가 가진 값을 바로 yieldㅏ는 게 아니라 '어딘가'로부터(from) 받아온 값을 yield해준다는 의미이다. 그리고 그 '어딘가'는 바로 iterable한 또다른 객체이다.
 
 ~~~python
-import itertools
+def gen1():
+    for x in 'AB':
+        yield x
+    for y in range(1,4):
+        yield y
 
-gen1 = itertools.count(1, 2.5)
+t1 = gen1()
 
-print(next(gen1))
-print(next(gen1))
-print(next(gen1))
+
+print('Ex5-1 - ', next(t1))
+print('Ex5-2 - ', next(t1))
+print('Ex5-3 - ', next(t1))
+print('Ex5-4 - ', next(t1))
+print('Ex5-5 - ', next(t1))
 ~~~
 
 ~~~
-1
-3.5
-6.0
+Ex5-1 -  A
+Ex5-2 -  B
+Ex5-3 -  1
+Ex5-4 -  2
+Ex5-5 -  3
 ~~~
 
-**itertools.takewhile**
-itertools.takewhile은 주어진 함수의 조건만큼의 generator를 만들어 준다.
+위의 for문을를 다음과 같이 바꿀 수 있다.
 
 ~~~python
-import itertools
+def gen2():
+    yield from 'AB'
+    yield from range(1,4)
 
-gen2 = itertools.takewhile(lambda n : n < 1000, itertools.count(1, 2.5))
+t3 = gen2()
 
-for v in gen2:
-    print(v)
-~~~
-
-**누적 합계 accumulate**
-아래 itertools.accumulate은 주어진 값의 누적 합을 보여준다.
-
-~~~python
-# 누적 합계
-gen4 = itertools.accumulate([x for x in range(1, 101)])
-
-for v in gen4:
-    print('Ex6-7 - ', v)
+print('Ex6-1 - ', next(t3))
+print('Ex6-2 - ', next(t3))
+print('Ex6-3 - ', next(t3))
+print('Ex6-4 - ', next(t3))
+print('Ex6-5 - ', next(t3))
 ~~~
 
 ~~~
-....
-Ex6-7 -  4753
-Ex6-7 -  4851
-Ex6-7 -  4950
-Ex6-7 -  5050
+Ex5-1 -  A
+Ex5-2 -  B
+Ex5-3 -  1
+Ex5-4 -  2
+Ex5-5 -  3
 ~~~
-
-**itertools.chain()**
-itertools.chain을 사용하면 다음과 같이 이어준다.
-~~~python
-import itertools
-
-gen5 = itertools.chain('ABCDE', range(1, 11, 2))
-
-print(list(gen5))
-~~~
-
-~~~
-['A', 'B', 'C', 'D', 'E', 1, 3, 5, 7, 9]
-~~~
-
-**itertools.product**
-product를 사용하여 모든 경우의 수를 출력할 수도 있다.
-
-~~~python
-import itertools
-
-gen8 = itertools.product('ABCDE', repeat=2)
-
-print('Ex6-11 - ', list(gen8))
-~~~
-
-~~~
-Ex6-11 -  [('A', 'A'), ('A', 'B'), ('A', 'C'), ('A', 'D'), ('A', 'E'), ('B',
-'A'), ('B', 'B'), ('B', 'C'), ('B', 'D'), ('B', 'E'), ('C', 'A'), ('C', 'B'), ('C', 'C'), ('C', 'D'), ('C', 'E'), ('D', 'A'), ('D', 'B'), ('D', 'C'), ('D', 'D'), ('D', 'E'), ('E', 'A'), ('E', 'B'), ('E', 'C'), ('E', 'D'), ('E', 'E')]
-~~~
-
-**그룹화**
-주어진 값을 그룹화 시킬수도 있다.
-~~~python
-import itertools
-
-gen9 = itertools.groupby('AAABBCCCCDDEE')
-
-for chr, group in gen9:
-    print('Ex6-12 - ', chr, ' : ', list(group))
-~~~
-
-~~~
-Ex6-12 -  A  :  ['A', 'A', 'A']
-Ex6-12 -  B  :  ['B', 'B']
-Ex6-12 -  C  :  ['C', 'C', 'C', 'C']
-Ex6-12 -  D  :  ['D', 'D']
-Ex6-12 -  E  :  ['E', 'E']
-~~~
-
-&nbsp;
-&nbsp;
-&nbsp;
-
 # 출저
-1. [http://schoolofweb.net/blog/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A0%9C%EB%84%88%EB%A0%88%EC%9D%B4%ED%84%B0-generator/](http://schoolofweb.net/blog/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%A0%9C%EB%84%88%EB%A0%88%EC%9D%B4%ED%84%B0-generator/)
+1. [https://devbox.tistory.com/entry/IT%EC%9A%A9%EC%96%B4-%E3%84%B9](https://devbox.tistory.com/entry/IT%EC%9A%A9%EC%96%B4-%E3%84%B9)
+
+2. [https://itholic.github.io/python-yield-from/](https://itholic.github.io/python-yield-from/)
