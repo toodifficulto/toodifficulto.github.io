@@ -83,13 +83,33 @@ programming\fcdjango_venv\Scripts\activate.ps1 파일을 로드할 수 없습니
 
 ![Alt text](/public/post/2020_02_06_python_web_django/pic_5.PNG)
 
-그리고 나서 startproject를 해주고
+그리고 나서 startproject를 해주고 프로젝트를 만드는 코드는 startproject이다.
 
 ~~~
 django-admin startproject fc_community
 ~~~
 
-startboard도 만들어 주었다. 앱을 만들어 주는 코드는 startapp이다. 
+startboard도 만들어 주었다. 앱을 만들어 주는 코드는 startapp이다.
 ~~~
 django-admin startapp board
 ~~~
+
+그리고 fcuser라는 다른 앱도 만들어 준다.
+
+~~~
+django-admin startapp fcuser
+~~~
+
+그러면 아래 처럼 fc_community 프로젝트 아래에 fc_user와 board 그리고 fc_community 앱(파일)이 또 만들어져 있다.
+![Alt text](/public/post/2020_02_06_python_web_django/pic6.PNG)
+
+
+다음으론 앱의 settings에 우리가 만들어 놓은 board와 fc_user를 등록해주어야 한다.
+
+fc_community 폴더에 fc_community를 들어가보면 settings.py라는 파일이 있다.
+
+이 파일에 INSTALLED_APPS를 보면 django에서 제공하는 여러 어플리케이션들이 있는데 우리가 만든 **board** 와 **fcuser** 도 추가해주면 된다.
+
+![Alt text](/public/post/2020_02_06_python_web_django/pic8.PNG)
+
+![Alt text](/public/post/2020_02_06_python_web_django/pic7.PNG)
