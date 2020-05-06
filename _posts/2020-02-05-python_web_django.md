@@ -89,7 +89,7 @@ programming\fcdjango_venv\Scripts\activate.ps1 파일을 로드할 수 없습니
 django-admin startproject fc_community
 ~~~
 
-startboard도 만들어 주었다.
+startboard도 만들어 주었다. 앱을 만들어 주는 코드는 startapp이다. 
 ~~~
-django-admin startapp_board
+django-admin startapp board
 ~~~
