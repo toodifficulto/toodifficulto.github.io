@@ -11,3 +11,4 @@ The following directories and their contents are Copyright Joe Friedrichsen and 
 All other directories and files are [MIT Licensed](http://github.com/wireddown/wireddown.github.io/blob/master/LICENSE.md) since they are forked from [Lanyon](http://github.com/poole/lanyon), an unassuming [Jekyll](http://jekyllrb.com/) theme
 
 
+
