@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  차별금지법
-tags:  [current_issue]
+tags:  [current-issue]
 ---
 
 # 차별금지법이란?
