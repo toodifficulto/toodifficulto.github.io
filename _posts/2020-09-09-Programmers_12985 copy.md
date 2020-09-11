@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Programmers 예상 대진표
+title:  Programmers [3차] 방금그곡
 tags:  [algorithm-problem]
 ---
 
-## [https://programmers.co.kr/learn/courses/30/lessons/12985](https://programmers.co.kr/learn/courses/30/lessons/12985)
+## [https://programmers.co.kr/learn/courses/30/lessons/17683](https://programmers.co.kr/learn/courses/30/lessons/17683)
 
 # 문제 
 방금그곡
