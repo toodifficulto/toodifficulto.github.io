@@ -346,3 +346,7 @@ plt.ylabel('KOSPI200')
 ~~~
 
 ![Alt text](/public/post/2020_10_24_Finance_Crawling/graph_3.PNG)
+
+&nbsp;
+&nbsp;
+&nbsp;
